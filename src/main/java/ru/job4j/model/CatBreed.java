@@ -11,13 +11,9 @@ public class CatBreed {
     private int id;
 
     private String breedName;
-    private String coatColor;
-    private String eyesColor;
 
-    public CatBreed(String breedName, String coatColor, String eyesColor) {
+    public CatBreed(String breedName) {
         this.breedName = breedName;
-        this.coatColor = coatColor;
-        this.eyesColor = eyesColor;
     }
 
     public CatBreed() {
@@ -37,22 +33,6 @@ public class CatBreed {
 
     public void setBreedName(String breedName) {
         this.breedName = breedName;
-    }
-
-    public String getCoatColor() {
-        return coatColor;
-    }
-
-    public void setCoatColor(String coatColor) {
-        this.coatColor = coatColor;
-    }
-
-    public String getEyesColor() {
-        return eyesColor;
-    }
-
-    public void setEyesColor(String eyesColor) {
-        this.eyesColor = eyesColor;
     }
 
     @Override
@@ -77,8 +57,6 @@ public class CatBreed {
         return "CatBreed{" +
                 "id=" + id +
                 ", breedName='" + breedName + '\'' +
-                ", coatColor='" + coatColor + '\'' +
-                ", eyesColor='" + eyesColor + '\'' +
                 '}';
     }
 }

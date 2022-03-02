@@ -19,7 +19,11 @@
         <property name="hibernate.jdbc.time_zone">Europe/Moscow</property>
 
 
-        <mapping class="" />
+        <mapping class="ru.job4j.model.Cat" />
+        <mapping class="ru.job4j.model.CatBreed" />
+        <mapping class="ru.job4j.model.Owner" />
+        <mapping class="ru.job4j.model.Ad" />
+        <mapping class="ru.job4j.model.User" />
 
     </session-factory>
 </hibernate-configuration>

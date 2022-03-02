@@ -1,6 +1,5 @@
 package ru.job4j.model;
 
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
@@ -17,6 +16,10 @@ public class Cat {
 
     private int age;
 
+    private String coatColor;
+
+    private String eyesColor;
+
     @ManyToOne
     @JoinColumn(name = "cat_breed_id", foreignKey = @ForeignKey(name = "CAT_BREED_ID_FK"))
     private CatBreed catBreed;
@@ -28,10 +31,11 @@ public class Cat {
                     @JoinColumn(name = "cat_id", nullable = false, updatable = false)})
     private Set<Owner> owners = new HashSet<>();
 
-
-    public Cat(String name, int age, CatBreed catBreed) {
+    public Cat(String name, int age, String coatColor, String eyesColor, CatBreed catBreed) {
         this.name = name;
         this.age = age;
+        this.coatColor = coatColor;
+        this.eyesColor = eyesColor;
         this.catBreed = catBreed;
     }
 
@@ -78,6 +82,22 @@ public class Cat {
         this.owners = owners;
     }
 
+    public String getCoatColor() {
+        return coatColor;
+    }
+
+    public void setCoatColor(String coatColor) {
+        this.coatColor = coatColor;
+    }
+
+    public String getEyesColor() {
+        return eyesColor;
+    }
+
+    public void setEyesColor(String eyesColor) {
+        this.eyesColor = eyesColor;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -101,6 +121,8 @@ public class Cat {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", coatColor='" + coatColor + '\'' +
+                ", eyesColor='" + eyesColor + '\'' +
                 ", catBreed=" + catBreed +
                 ", owners=" + owners +
                 '}';
